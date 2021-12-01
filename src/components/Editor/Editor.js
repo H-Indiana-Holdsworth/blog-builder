@@ -39,7 +39,7 @@ export default function Editor({
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" value={align} onChange={(e) => setAlign(e.target.value)}>
           <label>
             <input name="align" type="radio" value="left" />
             <i className="ri-align-left"></i>
@@ -55,7 +55,11 @@ export default function Editor({
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea
+          style={{ height: '250px' }}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
         <label>Text</label>
       </div>
     </div>
